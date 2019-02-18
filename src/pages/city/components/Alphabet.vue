@@ -1,15 +1,51 @@
 <template>
     <ul class="list">
-        <li class="item">A</li>
-        <li class="item">A</li>
-        <li class="item">A</li>
-        <li class="item">A</li>
+        <li class="item" v-for="item of letters" :key="item" :ref="item"
+            @click="handleClick"
+            @touchstart="handleTouchStart"
+            @touchmove="handleTouchMove"
+            @touchend="handleTouchEnd">{{ item }}</li>
     </ul>
 </template>
 
 <script>
 export default {
-    name: 'CityAlphabet'
+    name: 'CityAlphabet',
+    props: {
+        cities: Object
+    },
+    data () {
+        return {
+            touchStatus: false
+        }
+    },
+    computed: {
+        letters () {
+            return Object.keys(this.cities);
+        }
+    },
+    methods: {
+        handleClick (e) {
+            this.$emit('change', e.target.innerHTML);
+        },
+        handleTouchStart () {
+            this.touchStatus = true;
+        },
+        // 触屏拖动事件
+        handleTouchMove (e) {
+            if(this.touchStatus) {
+                let startY = this.$refs['A'][0].offsetTop;
+                let touchY = e.touches[0].clientY - 79;
+                let index = Math.floor((touchY - startY) / 20);
+                if(index >= 0 && index < this.letters.length) {
+                    this.$emit('change', this.letters[index]);
+                }
+            }
+        },
+        handleTouchEnd () {
+            this.touchStatus = false;
+        }
+    }
 }
 </script>
 
@@ -21,7 +57,7 @@ export default {
     flex-direction column
     justify-content center
     position absolute
-    top 0
+    top 1.58rem
     right 0
     bottom 0
     width .4rem
