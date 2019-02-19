@@ -47,15 +47,18 @@ export default {
             this.timer = setTimeout(() => {
                 if(!this.keyword) {
                     this.list = [];
+                    return;
                 }
+                const result = [];
                 for(let i in this.cities) {
                     this.cities[i].forEach((value) => {
                         if(value.spell.indexOf(this.keyword) > -1 ||
                             value.name.indexOf(this.keyword) > -1) {
-                                this.list.push(value)
+                                result.push(value)
                             }
                     })
                 }
+                this.list = result;
             }, 100);
         }
     }
