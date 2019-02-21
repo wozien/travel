@@ -9,19 +9,21 @@
         </div>
        <router-link to="/city">
            <div class="header-right">
-                {{ city }}
+                {{ this.city }}
                 <span class="iconfont arrow-icon">&#xe64a;</span>
             </div>
        </router-link>
-        
     </div>
 </template>
 
 <script>
+import { mapState } from 'vuex'
+
 export default {
     name: 'Home',
-    props: {
-        city: String
+    computed: {
+        // 将vuex中的state的属性映射成自己的属性
+        ...mapState(['city'])
     }
 }
 </script>
@@ -50,7 +52,8 @@ export default {
         padding-left .2rem
         color #ccc
     .header-right
-        width 1.24rem
+        min-width 1.04rem
+        padding 0 .1rem
         float right
         text-align center
         color #fff
