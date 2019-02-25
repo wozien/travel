@@ -43,6 +43,7 @@ export default {
         this.lastCity = this.city;
     },
     activated () {
+        // 判断当前城市是否更新，更新了再去请求数据
         if(this.lastCity !== this.city) {
             this.lastCity = this.city;
             this.getHomeInfo();
