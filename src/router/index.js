@@ -24,6 +24,7 @@ export default new Router({
       component: Detail
     }
   ],
+  // 页面跳转滚动行为， 重新定位到顶部
   scrollBehavior (to, from, savedPosition) {
     return {x: 0, y: 0}
   }
