@@ -2,7 +2,7 @@
 
 # 界面预览
 
-<img src="./src/assets/img/1.png" width="400">
+<img src="./src/assets/img/1.png" width="280">
 
 # 安装
 
