@@ -2,10 +2,8 @@
 
 # 界面预览
 
-<figure class="half">
-  <img src="./src/assets/img/1.png" width="280">
-  <img src="./src/assets/img/2.png" width="280">
-</figure>  
+<div style="float:left;margin-right:50px"><img src="./src/assets/img/1.png" width="280"></div>
+<div style="float:left"><img src="./src/assets/img/2.png" width="280"></div>
 
 # 安装
 
