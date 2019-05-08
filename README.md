@@ -1,21 +1,14 @@
-# travel
+基于vue模仿[去哪儿买票网](http://touch.piao.qunar.com/)app，实现首页，城市搜索页和旅游地点详情页
 
-> A Vue.js project
+### 界面预览
 
-## Build Setup
+<img src="./src/assets/img/1.png" width="400">
 
-``` bash
-# install dependencies
+### 安装
+
+```bash
+git clone git@github.com:wozien/travel.git
+cd travel
 npm install
-
-# serve with hot reload at localhost:8080
 npm run dev
-
-# build for production with minification
-npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
 ```
-
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
